@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FAFAFA; /* soft cream */
+  color: #333333;            /* dark gray text */
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 code {
