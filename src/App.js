@@ -41,7 +41,7 @@ function App() {
   useEffect(() => {
     if (!selectedTest) return;
     axios
-      .get(`http://127.0.0.1:5000/api/${selectedTest}/questions`)
+      .get(`http://15.222.61.13:5000/api/${selectedTest}/questions`)
       .then((res) => {
         setQuestions(res.data);
         setAnswers({});
@@ -57,7 +57,7 @@ function App() {
 
   const handleSubmit = () => {
     axios
-      .post(`http://127.0.0.1:5000/api/${selectedTest}/submit_exam`, { answers })
+      .post(`http://15.222.61.13:5000/api/${selectedTest}/submit_exam`, { answers })
       .then((res) => setScore(res.data))
       .catch((err) => console.error(err));
   };
@@ -148,7 +148,7 @@ function App() {
 
         {/* Center: Title */}
         <div style={{ flex: 1, textAlign: "center" }}>
-          <h2 style={{ margin: 0, fontSize: "36px" }}>
+          <h2 style={{ margin: 0, fontSize: "28px" }}>
             {selectedTest === "test1"
               ? "NACC Mock Test 1"
               : selectedTest === "test2"
@@ -177,8 +177,8 @@ function App() {
               key={q.id}
               onClick={() => setCurrentIndex(idx)}
               style={{
-                width: "40px",
-                height: "40px",
+                width: "35px",
+                height: "35px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -188,7 +188,7 @@ function App() {
                 fontWeight: "bold",
                 borderRadius: "5px",
                 textDecoration: answered ? "none" : "line-through",
-                border: idx === currentIndex ? "3px solid #000" : "none",
+                border: idx === currentIndex ? "4px solid #000" : "none",
               }}
             >
               {idx + 1}
@@ -205,7 +205,7 @@ function App() {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              fontSize: "24px",
+              fontSize: "20px",
               marginBottom: "10px",
             }}
           >
@@ -213,25 +213,25 @@ function App() {
               Question {currentIndex + 1} of {questions.length}
             </strong>
             <span>
-              Time Left: <b style={{ fontSize: "32px" }}>{formatTime(timeLeft)}</b>
+              Time Left: <b style={{ fontSize: "28px" }}>{formatTime(timeLeft)}</b>
             </span>
           </div>
 
           {/* Question Text */}
-          <p style={{ fontSize: "24px", marginBottom: "20px" }}>{currentQuestion.question}</p>
+          <p style={{ fontSize: "22px", marginBottom: "20px" }}>{currentQuestion.question}</p>
 
           {/* Options */}
           {currentQuestion.options.map((opt, idx) => {
             const optionLabel = String.fromCharCode(97 + idx);
             return (
-              <label key={idx} style={{ display: "block", margin: "5px 0", fontSize: "24px" }}>
+              <label key={idx} style={{ display: "block", margin: "5px 0", fontSize: "22px" }}>
                 <input
                   type="radio"
                   name={`question-${currentQuestion.id}`}
                   value={opt}
                   checked={answers[currentQuestion.id] === opt}
                   onChange={() => handleAnswerChange(currentQuestion.id, opt)}
-                  style={{ transform: "scale(1.5)", marginRight: "10px", cursor: "pointer" }}
+                  style={{ transform: "scale(1.4)", marginRight: "10px", cursor: "pointer" }}
                 />
                 {`${optionLabel}) ${opt}`}
               </label>
