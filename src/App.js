@@ -177,8 +177,8 @@ function App() {
               key={q.id}
               onClick={() => setCurrentIndex(idx)}
               style={{
-                width: "35px",
-                height: "35px",
+                width: "30px",
+                height: "30px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -186,9 +186,10 @@ function App() {
                 backgroundColor: answered ? "green" : "red",
                 color: "white",
                 fontWeight: "bold",
-                borderRadius: "5px",
+                fontSize: "15px",
+                borderRadius: "4px",
                 textDecoration: answered ? "none" : "line-through",
-                border: idx === currentIndex ? "4px solid #000" : "none",
+                border: idx === currentIndex ? "3px solid #000" : "none",
               }}
             >
               {idx + 1}
