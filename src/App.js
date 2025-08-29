@@ -75,8 +75,8 @@ function App() {
   // ------------------------
   if (!selectedTest) {
     return (
-      <div style={{ textAlign: "center", marginTop: "50px", backgroundColor: "#FAFAFA", color: "#222" }}>
-        <img src={logo} alt="Logo" style={{ height: "150px", marginBottom: "20px" }} />
+      <div style={{ textAlign: "center", marginTop: "20px", backgroundColor: "#FAFAFA", color: "#222" }}>
+        <img src={logo} alt="Logo" style={{ height: "120px", marginBottom: "10px" }} />
         <h2>Select a Mock Test</h2>
         <ul style={{ listStyle: "none", padding: 0 }}>
           <li>
@@ -90,7 +90,7 @@ function App() {
           <li>
             <button
               className="button-primary"
-              style={{ marginTop: "20px" }}
+              style={{ marginTop: "10px" }}
               onClick={() => setSelectedTest("test2")}
             >
               NACC Mock Test 2
@@ -99,7 +99,7 @@ function App() {
           <li>
             <button
               className="button-primary"
-              style={{ marginTop: "20px" }}
+              style={{ marginTop: "10px" }}
               onClick={() => setSelectedTest("test3")}
             >
               NACC Mock Test 3
@@ -138,7 +138,7 @@ function App() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          marginBottom: "20px",
+          marginBottom: "10px",
         }}
       >
         {/* Left: Logo */}
@@ -169,7 +169,7 @@ function App() {
       </div>
 
       {/* Dashboard */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "20px" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "10px" }}>
         {questions.map((q, idx) => {
           const answered = answers[q.id];
           return (
@@ -219,7 +219,7 @@ function App() {
           </div>
 
           {/* Question Text */}
-          <p style={{ fontSize: "22px", marginBottom: "20px" }}>{currentQuestion.question}</p>
+          <p style={{ fontSize: "22px", marginBottom: "10px" }}>{currentQuestion.question}</p>
 
           {/* Options */}
           {currentQuestion.options.map((opt, idx) => {
@@ -240,7 +240,7 @@ function App() {
           })}
 
           {/* Navigation */}
-          <div style={{ marginTop: "20px", textAlign: "center" }}>
+          <div style={{ marginTop: "10px", textAlign: "center" }}>
             {currentIndex > 0 && (
               <button onClick={handlePrevious} className="button-primary" style={{ marginRight: "20px" }}>
                 Previous
@@ -258,7 +258,7 @@ function App() {
           </div>
         </div>
       ) : (
-        <div style={{ marginTop: "30px", textAlign: "center" }}>
+        <div style={{ marginTop: "20px", textAlign: "center" }}>
           <h3 style={{ fontSize: "24px" }}>Your Results</h3>
           <p style={{ fontSize: "24px" }}>
             Score: {score.score} / {score.total_questions}
