@@ -199,14 +199,14 @@ function App() {
       </div>
 
       {!score ? (
-        <div style={{ textAlign: "justify", marginLeft: "100px", marginRight: "50px" }}>
+        <div style={{ textAlign: "justify", marginLeft: "50px", marginRight: "50px" }}>
           {/* Question Header */}
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              fontSize: "20px",
+              fontSize: "18px",
               marginBottom: "10px",
             }}
           >
@@ -214,25 +214,25 @@ function App() {
               Question {currentIndex + 1} of {questions.length}
             </strong>
             <span>
-              Time Left: <b style={{ fontSize: "28px" }}>{formatTime(timeLeft)}</b>
+              Time Left: <b style={{ fontSize: "24px" }}>{formatTime(timeLeft)}</b>
             </span>
           </div>
 
           {/* Question Text */}
-          <p style={{ fontSize: "22px", marginBottom: "10px" }}>{currentQuestion.question}</p>
+          <p style={{ fontSize: "20px", marginBottom: "10px" }}>{currentQuestion.question}</p>
 
           {/* Options */}
           {currentQuestion.options.map((opt, idx) => {
             const optionLabel = String.fromCharCode(97 + idx);
             return (
-              <label key={idx} style={{ display: "block", margin: "5px 0", fontSize: "22px" }}>
+              <label key={idx} style={{ display: "block", margin: "4px 0", fontSize: "20px" }}>
                 <input
                   type="radio"
                   name={`question-${currentQuestion.id}`}
                   value={opt}
                   checked={answers[currentQuestion.id] === opt}
                   onChange={() => handleAnswerChange(currentQuestion.id, opt)}
-                  style={{ transform: "scale(1.4)", marginRight: "10px", cursor: "pointer" }}
+                  style={{ transform: "scale(1.3)", marginRight: "10px", cursor: "pointer" }}
                 />
                 {`${optionLabel}) ${opt}`}
               </label>
