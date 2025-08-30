@@ -41,7 +41,7 @@ function App() {
   useEffect(() => {
     if (!selectedTest) return;
     axios
-      .get(`http://15.222.61.13:5000/api/${selectedTest}/questions`)
+      .get(`http://sanjoykumardas.info:5000/api/${selectedTest}/questions`)
       .then((res) => {
         setQuestions(res.data);
         setAnswers({});
@@ -57,7 +57,7 @@ function App() {
 
   const handleSubmit = () => {
     axios
-      .post(`http://15.222.61.13:5000/api/${selectedTest}/submit_exam`, { answers })
+      .post(`http://sanjoykumardas.info:5000/api/${selectedTest}/submit_exam`, { answers })
       .then((res) => setScore(res.data))
       .catch((err) => console.error(err));
   };
